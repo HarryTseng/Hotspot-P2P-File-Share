@@ -9,7 +9,8 @@ addr = ('255.255.255.255', 8080)
 try:
     client.sendto(MESSAGE, addr)
     data, server = client.recvfrom(1024)
-    print("Receive")
+    if data == b"LAPTOP_REPLY":
+        print("Receive")
 
 except socket.timeout:
     print("Time Exceed")
